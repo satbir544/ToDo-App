@@ -55,13 +55,13 @@ function Home() {
 
 	return (
 		<div className="Home">
-			<h2>Your tasks</h2>
+			<h2>Your Tasks</h2>
 
 			<div className="todos">
 				{todos.length > 0 ? todos.map(todo => (
-					<div className={
-						"todo" + (todo.complete ? " is-complete" : "")
-					} key={todo._id} onClick={() => completeTodo(todo._id)}>
+					<div className={"todo" + (todo.complete ? " is-complete" : "")}
+					 	key={todo._id} onClick={() => completeTodo(todo._id)}
+					>
 						<div className="checkbox"></div>
 
 						<div className="text">{todo.text}</div>
