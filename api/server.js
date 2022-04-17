@@ -34,6 +34,19 @@ app.get('/completed-todos', async (req, res) => {
 	res.json(temp);
 });
 
+app.get('/incomplete-todos', async (req, res) => {
+	const todos = await Todo.find();
+	var temp = [];
+	
+	for (var i = 0; i < todos.length; i += 1) {
+		if (!todos[i].complete) {
+			temp.push(todos[i]);
+		}
+	}
+
+	res.json(temp);
+});
+
 app.post('/todo/new', (req, res) => {
 	const todo = new Todo({
 		text: req.body.text
