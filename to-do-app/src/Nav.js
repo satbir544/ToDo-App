@@ -4,7 +4,7 @@ function Nav() {
     const navStyle = {
         color: '#cccccc',
         textDecoration: 'none',
-        fontSize: '16px'
+        fontSize: '18px'
     };
 
     return (

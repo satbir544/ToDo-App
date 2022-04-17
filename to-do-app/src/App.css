@@ -13,6 +13,13 @@ nav {
     border-radius: 6px;
 }
 
+nav li {
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-block-start: 3px;
+    padding-block-end: 3px;
+}
+
 .nav-links {
     width: 40%;
     display: flex;
