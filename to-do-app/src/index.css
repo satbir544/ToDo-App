@@ -178,6 +178,28 @@ h3 {
 	height: 52px;
 }
 
+.delHistory {
+	position: fixed;
+	bottom: 42px;
+	right: 42px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 120px;
+	height: 38px;
+	border-radius: 4px;
+	font-size: 16px;
+	font-weight: 400;
+	background-color: rgb(95, 95, 95);
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.delHistory:hover {
+	background-color: rgb(78, 78, 78);
+}
+
 .popup {
 	position: fixed;
 	top: 50%;

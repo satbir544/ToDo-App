@@ -84,6 +84,7 @@ function Home() {
 			if (todo._id === id) {
 				insertIntoHistory("Deleted Task: " + todo.text);
 			}
+			return todo;
 		})
 		
 		const data = await fetch(api_base + '/todo/delete/' + id, { method: "DELETE" }).then(res => res.json());

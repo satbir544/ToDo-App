@@ -107,4 +107,10 @@ app.post('/history/insert', (req, res) => {
 	res.json(history);
 });
 
+app.delete('/history/delete', async (req, res) => {
+	const result = await History.remove();
+
+	res.json({result});
+});
+
 app.listen(PORT);
