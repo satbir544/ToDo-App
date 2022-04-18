@@ -28,16 +28,16 @@ function Home() {
 		setId(id)
 	}
 
-	const completeTodo = async id => {
-		const data = await fetch(api_base + '/todo/complete/' + id).then(res => res.json());
-
-		setTodos(todos => todos.map(todo => {
-			if (todo._id === data._id) {
-				todo.complete = data.complete;
-			}
-
-			return todo;
-		}));
+	const insertIntoHistory = (txt) => {
+		fetch(api_base + "/history/insert", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json" 
+			},
+			body: JSON.stringify({
+				text: txt
+			})
+		}).then(res => res.json());
 	}
 
 	const addTodo = async () => {
@@ -53,11 +53,37 @@ function Home() {
 
 		setTodos([...todos, data]);
 
+		insertIntoHistory("Added Task: " + newTodo);
+
 		setPopupActive(false);
 		setNewTodo("");
 	}
 
+	const completeTodo = async id => {
+		const data = await fetch(api_base + '/todo/complete/' + id).then(res => res.json());
+
+		setTodos(todos => todos.map(todo => {
+			if (todo._id === data._id) {
+				todo.complete = data.complete;
+
+				if (todo.complete) {
+					insertIntoHistory("Completed Task: " + todo.text);
+				} else {
+					insertIntoHistory("Unchecked Task: " + todo.text);
+				}
+			}
+
+			return todo;
+		}));
+	}
+
 	const deleteTodo = async id => {
+		todos.map(todo => {
+			if (todo._id === id) {
+				insertIntoHistory("Deleted Task: " + todo.text);
+			}
+		})
+		
 		const data = await fetch(api_base + '/todo/delete/' + id, { method: "DELETE" }).then(res => res.json());
 
 		setTodos(todos => todos.filter(todo => todo._id !== data.result._id));
@@ -72,6 +98,7 @@ function Home() {
 
 		setTodos(todos => todos.map(todo => {
 			if (todo._id === data._id) {
+				insertIntoHistory("Edited Task: '" + todo.text + "' to '" + data.text + "'");
 				todo.text = data.text;
 			}
 

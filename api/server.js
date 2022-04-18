@@ -16,6 +16,7 @@ mongoose.connect('mongodb+srv://awftodo:awf2022@todoappdatabase.qxdpj.mongodb.ne
 
 // Models
 const Todo = require('./models/Todo');
+const History = require('./models/History');
 
 app.get('/todos', async (req, res) => {
 	const todos = await Todo.find();
@@ -83,6 +84,22 @@ app.post('/todo/update/:id', async (req, res) => {
 	todo.save();
 
 	res.json(todo);
+});
+
+app.get('/history', async (req, res) => {
+	const history = await History.find();
+
+	res.json(history);
+});
+
+app.post('/history/insert', (req, res) => {
+	const history = new History({
+		text: req.body.text
+	})
+
+	history.save();
+
+	res.json(history);
 });
 
 app.listen(3001);
