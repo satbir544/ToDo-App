@@ -21,7 +21,7 @@ function History() {
 
 			<div className="history">
 				{history.length > 0 ? history.map(h => (
-                    <div> {h.text} {' '} ({h.timestamp}) </div>
+                    <p> {h.text} {' '} ({h.timestamp}) </p>
 				)) : (
 					<p>No History Found.</p>
 				)}
