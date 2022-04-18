@@ -7,7 +7,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb://127.0.0.1:27017/react-todo', {
+// mongodb+srv://awftodo:<password>@todoappdatabase.qxdpj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+// mongodb://127.0.0.1:27017/react-todo 
+mongoose.connect('mongodb+srv://awftodo:awf2022@todoappdatabase.qxdpj.mongodb.net/ToDoAppDatabase?retryWrites=true&w=majority', {
 	useNewUrlParser: true, 
 	useUnifiedTopology: true 
 }).then(() => console.log("Connected to MongoDB")).catch(console.error);
@@ -73,7 +75,7 @@ app.get('/todo/complete/:id', async (req, res) => {
 	res.json(todo);
 })
 
-app.put('/todo/update/:id', async (req, res) => {
+app.post('/todo/update/:id', async (req, res) => {
 	const todo = await Todo.findById(req.params.id);
 
 	todo.text = req.body.text;
