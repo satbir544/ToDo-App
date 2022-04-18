@@ -17,7 +17,7 @@ function Incomplete() {
 
     return (
         <div className="Incomplete">
-			<h2>Your Incompleted Tasks</h2>
+			<h2>Your Incomplete Tasks</h2>
 
 			<div className="todos">
 				{todos.length > 0 ? todos.map(todo => (

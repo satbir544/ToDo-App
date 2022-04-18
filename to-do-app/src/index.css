@@ -45,6 +45,7 @@ p {
 	font-weight: 200;
 	margin-bottom: 16px;
 }
+
 p1{
 	display: flex;
     align-items: center;
@@ -54,7 +55,6 @@ p1{
     border-radius: 15px;
 	margin-left: 10px;
 	text-align: center;
-	
 }
 
 h3 {
