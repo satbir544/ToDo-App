@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import {FaTrash} from 'react-icons/fa';
+
 const api_base = 'http://localhost:3001';
 
 function Home() {
@@ -65,8 +67,8 @@ function Home() {
 						<div className="checkbox"></div>
 
 						<div className="text">{todo.text}</div>
-
-						<div className="delete-todo" onClick={() => deleteTodo(todo._id)}>x</div>
+						
+						<div className="delete-todo" onClick={() => deleteTodo(todo._id)}> <FaTrash/> </div>
 					</div>
 				)) : (
 					<p>You currently have no tasks. Click the + button to add a task.</p>
