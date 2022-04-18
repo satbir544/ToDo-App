@@ -8,7 +8,7 @@ const HistorySchema = new Schema({
 	},
 	timestamp: {
 		type: String,
-		default: Date.now()
+		default: new Date()
 	}
 });
 

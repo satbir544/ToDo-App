@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
+const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(cors());
@@ -51,13 +52,15 @@ app.get('/incomplete-todos', async (req, res) => {
 });
 
 app.post('/todo/new', (req, res) => {
-	const todo = new Todo({
-		text: req.body.text
-	})
+	if (req.body.text !== "") {
+		const todo = new Todo({
+			text: req.body.text
+		})
 
-	todo.save();
+		todo.save();
 
-	res.json(todo);
+		res.json(todo);
+	}
 });
 
 app.delete('/todo/delete/:id', async (req, res) => {
@@ -77,13 +80,15 @@ app.get('/todo/complete/:id', async (req, res) => {
 })
 
 app.post('/todo/update/:id', async (req, res) => {
-	const todo = await Todo.findById(req.params.id);
+	if (req.body.text !== "") {
+		const todo = await Todo.findById(req.params.id);
 
-	todo.text = req.body.text;
+		todo.text = req.body.text;
 
-	todo.save();
+		todo.save();
 
-	res.json(todo);
+		res.json(todo);
+	}
 });
 
 app.get('/history', async (req, res) => {
@@ -102,4 +107,4 @@ app.post('/history/insert', (req, res) => {
 	res.json(history);
 });
 
-app.listen(3001);
+app.listen(PORT);

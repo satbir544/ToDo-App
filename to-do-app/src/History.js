@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react';
+
+//const api_base = 'https://awftodoappserver.azurewebsites.net';
+
 const api_base = 'http://localhost:3001';
 
 function History() {
@@ -21,7 +24,7 @@ function History() {
 
 			<div className="history">
 				{history.length > 0 ? history.map(h => (
-                    <p> {h.text} {' '} ({h.timestamp}) </p>
+                    <p> {h.text} {' -- '} {h.timestamp}</p>
 				)) : (
 					<p>No History Found.</p>
 				)}
