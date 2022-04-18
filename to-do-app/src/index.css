@@ -35,8 +35,7 @@ h2 {
 	color: var(--primary);
 	text-transform: uppercase;
 	font-weight: 400;
-	margin-bottom: 6px;
-
+	margin-bottom: 16px;
 }
 
 p {

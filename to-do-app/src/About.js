@@ -5,7 +5,7 @@ function About() {
             <div>
                 <h3>About</h3>
                     <p1>
-                        Welcome to the ToDo App. This app will help you to make your day organized and more progressive. There are four major section in the app. 1. Home 2. Complete 3. Incomplete 4. History. Each section is described briefly below.
+                        Welcome to the ToDo App. This app will help you to make your day organized and more progressive. There are four major sections in the app: 1. Home 2. Complete 3. Incomplete 4. History. Each section is described briefly below.
                     </p1>
                 </div>
 
@@ -27,7 +27,7 @@ function About() {
             <div>
                 <h3>Incomplete</h3>
                 <p1>
-                    All Incompleted tasks are shown in this section. When you create a task, it will be incomplete by default and will be shown on Home page as well as the in incomplete section.
+                    All Incompleted tasks are shown in this section. When you create a task, it will be incomplete by default and will be shown on Home page as well as the in Incomplete page.
                 </p1>
             </div>
 
