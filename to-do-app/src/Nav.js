@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom';
 
+
 function Nav() {
     const navStyle = {
         color: '#ddd',
@@ -9,6 +10,7 @@ function Nav() {
 
     return (
         <nav>
+            
             <ul className='nav-links'>
                 <Link style={navStyle} to='/'>
                     <li> Home </li>

@@ -6,12 +6,17 @@ import Complete from './Complete';
 import Incomplete from './Incomplete';
 import History from './History';
 import About from './About';
+import logoPic from './Images/logoPic.png';
+
 import './App.css';
 
 function App() {
 	return (
 		<Router>
-			<div className="App">
+			<div className="Logo">
+				<img src= {logoPic} alt = "logoPic" height = "175"/>
+			</div>
+			<div className="App">			
 				<Nav/>
 				<Switch>
 					<Route path="/" exact component={Home}/>

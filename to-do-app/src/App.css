@@ -13,6 +13,14 @@ nav {
     border-radius: 6px;
 }
 
+.Logo{
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0%;
+}
+
 nav li {
     padding-right: 5px;
     padding-left: 5px;
